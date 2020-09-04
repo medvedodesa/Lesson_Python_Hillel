@@ -4,6 +4,7 @@
 Написать программу, которая выводит
 в консоль таблицу Escape-последовательностей:
 '''
+
 r = input('Введите слово "esc"...')
 
 esc = 'Escape sequences:\n\
@@ -20,6 +21,6 @@ esc = 'Escape sequences:\n\
 if 'esc' in r:
     print(esc)
 else:
-    print('error')
+    print('Error Enter')
 
 # Добавил в задачу оператор IF
