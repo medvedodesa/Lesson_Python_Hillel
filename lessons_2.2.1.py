@@ -13,7 +13,7 @@ esc = 'Escape sequences:\n\
 \\b \t\tBackspace\n\
 \\n \t\tNew Line\n\
 \\t \t\tHorizontal tab\n\
-\\\ \t\tBackslash \\\n\
+\\  \t\tBackslash \\\n\
 \\" \t\tDoubel quotation mark "\n\
 \\\'\t\tSingle quotation mark \''
 
