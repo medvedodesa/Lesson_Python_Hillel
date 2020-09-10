@@ -29,6 +29,7 @@ while True:
 
     if mixs is None:
         mixs, mins = num, num
+    # В этом месте PyCharm сам исправил с (if mixs == None) на (if mixs is None)
 
     if num > mixs:
         mixs = num
