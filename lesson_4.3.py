@@ -14,8 +14,8 @@
 qnt = 0
 suma = 0
 arg = 0
-mixs = None
-mins = None
+mixs = 0
+mins = 0
 even = 0
 n_even = 0
 
@@ -27,9 +27,8 @@ while True:
     suma = suma + num
     arg = suma / qnt
 
-    if mixs is None:
+    if mixs == 0:
         mixs, mins = num, num
-    # В этом месте PyCharm сам исправил с (if mixs == None) на (if mixs is None)
 
     if num > mixs:
         mixs = num
