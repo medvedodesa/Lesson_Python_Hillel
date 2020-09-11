@@ -23,8 +23,9 @@ while True:
     num = int(input('Введите целое число: '))
     if not num:
         break
+
     qnt += 1
-    suma = suma + num
+    suma += num
     arg = suma / qnt
 
     if mixs == 0:
