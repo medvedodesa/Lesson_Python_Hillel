@@ -10,8 +10,12 @@ num = 2
 power = 1
 
 while num <= n:
+    if (num * 2) > n:
+        break
+
     num *= 2
     power += 1
-    #print(power, num)
 
-print(power - 1, num // 2)
+print(power, num)
+
+
