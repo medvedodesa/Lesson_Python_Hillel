@@ -13,6 +13,7 @@ ch = s.find("ch")
 last_ch = s.rfind("ch")
 i = 1
 
+# Также условия цикла можно прописать так (while ch > -1) вместо переменной last_ch.
 while ch < last_ch:
     print(i, "раз когда мы встретили 'ch' в нашей строке с индексом", ch)
     ch = s.find("ch", ch + 1)
