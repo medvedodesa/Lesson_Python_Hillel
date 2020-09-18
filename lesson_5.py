@@ -17,6 +17,13 @@
 
 s = 'Given a string.'
 
+# while True:
+#     s = input('Введите строку:')
+#     if len(s) < 5:
+#         continue
+#     else:
+#         break
+
 print('Наша стока:', s)
 print('Третий символ этой строки:', s[2])
 print('Предпоследний символ этой строки:', s[-2])
