@@ -17,6 +17,16 @@
 
 s = 'Given a string.'
 
+# while True:
+#     s = input("Введите строку не меньше пяти символов:")
+#     if s.isalnum():
+#         if len(s) < 5:
+#             continue
+#         else:
+#             break
+#     else:
+#         continue
+
 print('Наша стока:', s)
 print('Третий символ этой строки:', s[2])
 print('Предпоследний символ этой строки:', s[-2])
