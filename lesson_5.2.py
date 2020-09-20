@@ -27,10 +27,11 @@ else:
 # Вариант 2
 s = input('Введите строку:')
 ch = s.find("ch")
+last_ch = s.rfind("ch")
 i = 1
 
 while True:
-    if ch > -1:
+    if ch <= last_ch and ch != -1:
         print(i, "раз когда мы встретили 'ch' в нашей строке с индексом", ch)
         ch = s.find("ch", ch + 1)
         i += 1
