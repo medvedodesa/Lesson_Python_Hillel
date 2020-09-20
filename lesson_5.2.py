@@ -10,21 +10,19 @@
 
 # Вариант 1
 s = input('Введите строку:')
-ch = s.find("ch")
-last_ch = s.rfind("ch")
+last_ch = s.find("ch")
+
 i = 1
 
-while True:
-    if ch <= last_ch and ch != -1:
-        print(i, "раз когда мы встретили 'ch' в нашей строке с индексом", ch)
-        ch = s.find("ch", ch + 1)
+if last_ch > -1:
+    while last_ch > -1:
+        print(i, "раз когда мы встретили 'ch' в нашей строке с индексом", last_ch)
+        last_ch = s.find("ch", last_ch + 1)
         i += 1
-        if ch == -1:
-            print("Больше совпадений с символом 'ch' не найдено!")
-            break
     else:
-        print("Cовпадений с символом 'ch' не найдено!")
-        break
+        print("Больше совпадений с символом 'ch' не найдено!")
+else:
+    print("Cовпадений с символом 'ch' не найдено!")
 
 # Вариант 2
 s = input('Введите строку:')
