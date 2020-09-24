@@ -8,12 +8,12 @@
 import random
 
 # Вариант решения 1 (Более обширный)
-lis = [random.randint(1, 5) for value in range(10)]
+lis = [random.randint(1, 5) for lis1 in range(10)]
 print(lis)
 print(len(list(set(lis))))
 
 # Вариант решения 2 (В одну строку)
-print(len(list(set([random.randint(1, 5) for value in range(10)]))))
+print(len(list(set([random.randint(1, 5) for lis2 in range(10)]))))
 
 """
 Что я сделал?
@@ -26,10 +26,10 @@ print(len(list(set([random.randint(1, 5) for value in range(10)]))))
 """
 
 # Вариант решения 3 (Только SET())
-lis = set(random.randint(1, 5) for value in range(10))
+lis = set(random.randint(1, 5) for lis3 in range(10))
 print(lis)
 print(len(set(lis)), type(lis))
 
 # И также можно записать эту задачу в одну строку!
-print(len(set(random.randint(1, 5) for value in range(10))))
+print(len(set(random.randint(1, 5) for lis4 in range(10))))
 
