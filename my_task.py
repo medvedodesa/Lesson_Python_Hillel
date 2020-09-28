@@ -50,5 +50,3 @@
 #
 # print(factorial(num))
 
-
-
