@@ -8,6 +8,8 @@
 В остальных случаях вернуть строку "Неизвестная операция".
 """
 
+# Вариант решения №1
+
 a = int(input("Введите первое число: "))
 b = int(input("Введите второе число: "))
 c = input("Выберете какую операцию произвести над этими числами(+, -, *, /,): ")
@@ -32,3 +34,25 @@ def arithmetic(x, y, z):
 
 
 arithmetic(a, b, c)
+
+# Вариант решения №2
+
+# def arithmetic(x, y, z):
+#     res = 0
+#     if c == "+":
+#         res = a + b
+#         return res
+#     elif c == "-":
+#         res = a - b
+#         return res
+#     elif c == "*":
+#         res = a * b
+#         return res
+#     elif c == "/":
+#         res = a / b
+#         return res
+#     else:
+#         return "Неизвестная операция!"
+#
+#
+# print(arithmetic(a, b, c))
