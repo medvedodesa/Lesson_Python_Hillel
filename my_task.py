@@ -50,3 +50,9 @@
 #
 # print(factorial(num))
 
+from math import sqrt
+
+a = 9 ** 0.5
+c = sqrt(9)
+print(c)
+
