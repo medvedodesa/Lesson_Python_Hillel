@@ -9,7 +9,7 @@ year_leap = int(input('Введите ваш год: '))
 
 
 def is_year_leap(year):
-    if not year_leap % 4:
+    if not year % 4 and year % 100 or not year % 400:
         return True
 
     else:
