@@ -50,12 +50,3 @@
 #
 # print(factorial(num))
 
-
-def power(a, n):
-    return pow(a, n)
-
-
-x = int(input())
-y = int(input())
-
-print(power(x, y))
