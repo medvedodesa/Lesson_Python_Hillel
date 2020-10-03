@@ -18,17 +18,23 @@ book = [
         [88112, 'Einfuhrung in Python3, Bernd Klein', 3, 24.99]
        ]
 
-lst_book = list(map(lambda x: (x[0], (round(x[3] * x[2], 2) + 10) if round(x[3] * x[2], 2) < 100 else round(x[3] * x[2], 2), x[2]), book))
+lst_book = list(map(lambda x: (x[0], (round(x[3] * x[2], 2) + 10) if round(x[3] * x[2], 2) < 100 else round(x[3] * x[2], 2)), book))
 
 print('Результат решение задачи в одну строку!')
 print(lst_book)
+print()
+
+# Так же можно сразу всё выражение передать в PRINT.
+print('Результат решения через PRINT в одну строку!')
+print(list(map(lambda x: (x[0], (round(x[3] * x[2], 2) + 10) if round(x[3] * x[2], 2) < 100 else round(x[3] * x[2], 2)), book)))
 print()
 
 # Вывел отдельно список кортежей с названием книг!
 j = 0
 
 for i in lst_book:
-    print('Название книги:', book[j][1], '\nномера заказа / произведения цены на товары / количество товара\n', i)
+    print('Название книги:', book[j][1], '\nномера заказа / произведения цены на товары и количество\n', i)
     j += 1
+
 
 
