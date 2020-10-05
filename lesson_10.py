@@ -26,4 +26,4 @@ while True:
     else:
         break
 
-print(convert_numeral_system(num, numeral_system), type(convert_numeral_system(num, numeral_system)))
+print(convert_numeral_system(num, numeral_system))
