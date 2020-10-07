@@ -17,7 +17,7 @@ while True:
         print()
 
         figure = input("""Выберети желаемую фигуру:
-        
+
   1. Пустой треугольник 
   2. Закрашеный треугольник
   3. Пустой ромб
@@ -25,7 +25,7 @@ while True:
   5. Верхняя часть ромба закрашеная а нижняя пустая
   6. Верхняя часть ромба закрашеная а нижняя пустая и вертикальной линией
   0. Завершить работу программы
-    
+
 Введите номер указаной фигуры: """)
 
         print()
@@ -55,13 +55,13 @@ while True:
                     break
                 n = input("""      Введите любое НЕ ЧЁТНОЕ НАТУРАЛЬНОЕ число!
         *** Это будет высота вашей фигуры ***
-    
+
                 !!!ПРЕДУПРЕЖДЕНИЕ!!!  
-                            
+
 Если вы введёте ЧЁТНОЕ число то оно увеличится на одну 
 единицу. НАПРИМЕР: вы ввели число 2 оно станет 3!
 Или введите "0" что бы выбрать другую фугуру.
-    
+
 Введите ваше число: """)
                 if n.isdigit():
                     n = int(n)
@@ -81,16 +81,16 @@ while True:
                             for i in range(n):
                                 for j in range(2 * n - 1):
                                     if j == n - 1 - i or j == n - 1 + i or i == n - 1:
-                                        print('*', end='')
+                                        print('* ', end='')
                                     else:
-                                        print(' ', end='')
+                                        print('  ', end='')
                                 print()
                             print()
                             end = input("""*** Выберете следующее действие ***
-    
+
  1. Ещё разок выбрать фигуру
  0. Завершить роботу программы
-    
+
 Ваше действие: """)
                             if end.isdigit():
                                 end = int(end)
@@ -100,19 +100,19 @@ while True:
                                 continue
                         elif figure == 2:
                             for i in range(n):
-                                print(' ' * n, end='')
+                                print('  ' * n, end='')
                                 n -= 1
                                 for j in range(i):
-                                    print('*', end='')
+                                    print('* ', end='')
                                 for j in range(i + 1):
-                                    print('*', end='')
+                                    print('* ', end='')
                                 print()
                             print()
                             end = input("""Выберете следующее действие:
-    
+
  1. Ещёразок выбрать фигуру
  0. Завершить роботу программы
-    
+
 Ваше действие: """)
                             if end.isdigit():
                                 end = int(end)
@@ -125,23 +125,23 @@ while True:
                                 if i < c:
                                     for j in range(2 * n - 1):
                                         if j == n - 1 - i or j == n - 1 + i or i == n - 1:
-                                            print('*', end='')
+                                            print('* ', end='')
                                         else:
-                                            print(' ', end='')
+                                            print('  ', end='')
                                 else:
                                     n -= 1
                                     for j in range(2 * n):
                                         if j == i or j == n + c - 2:
-                                            print('*', end='')
+                                            print('* ', end='')
                                         else:
-                                            print(' ', end='')
+                                            print('  ', end='')
                                 print()
                             print()
                             end = input("""Выберете следующее действие:
-    
+
  1. Ещё разок выбрать фигуру
  0. Завершить роботу программы
-    
+
 Ваше действие: """)
                             if end.isdigit():
                                 end = int(end)
@@ -152,26 +152,26 @@ while True:
                         elif figure == 4:
                             for i in range(n):
                                 if i < c:
-                                    print(' ' * n, end='')
+                                    print('  ' * n, end='')
                                     n -= 1
                                     for j in range(i):
-                                        print('*', end='')
+                                        print('* ', end='')
                                     for j in range(i + 1):
-                                        print('*', end='')
+                                        print('* ', end='')
                                 else:
-                                    print(' ' * (i + 1), end='')
+                                    print('  ' * (i + 1), end='')
                                     n -= 1
                                     for j in range(n + 1):
-                                        print('*', end='')
+                                        print('* ', end='')
                                     for j in range(n):
-                                        print('*', end='')
+                                        print('* ', end='')
                                 print()
                             print()
                             end = input("""Выберете следующее действие:
-    
+
  1.     Ещё разок выбрать фигуру
  0.     Завершить роботу программы
-    
+
 Ваше действие: """)
                             if end.isdigit():
                                 end = int(end)
@@ -182,26 +182,26 @@ while True:
                         elif figure == 5:
                             for i in range(n):
                                 if i < c:
-                                    print(' ' * n, end='')
+                                    print('  ' * n, end='')
                                     n -= 1
                                     for j in range(i):
-                                        print('*', end='')
+                                        print('* ', end='')
                                     for j in range(i + 1):
-                                        print('*', end='')
+                                        print('* ', end='')
                                 else:
                                     n -= 1
                                     for j in range(2 * n + (j + 3)):
                                         if j == i + 1 or j == n + (2 * c - 1):
-                                            print('*', end='')
+                                            print('* ', end='')
                                         else:
-                                            print(' ', end='')
+                                            print('  ', end='')
                                 print()
                             print()
                             end = input("""Выберете следующее действие:
-    
+
  1. Ещё разок выбрать фигуру
  0. Завершить роботу программы
-    
+
 Ваше дествие: """)
                             if end.isdigit():
                                 end = int(end)
@@ -212,27 +212,27 @@ while True:
                         elif figure == 6:
                             for i in range(n):
                                 if i < c:
-                                    print(' ' * n, end='')
+                                    print('  ' * n, end='')
                                     n -= 1
                                     for j in range(i):
-                                        print('*', end='')
+                                        print('* ', end='')
                                     for j in range(i + 1):
-                                        print('*', end='')
+                                        print('* ', end='')
                                 else:
                                     n -= 1
                                     for j in range(2 * n + (j + 3)):
                                         if j == i + 1 or j == n + (2 * c - 1) or j == n + i + 1:
-                                            print('*', end='')
+                                            print('* ', end='')
                                         else:
-                                            print(' ', end='')
+                                            print('  ', end='')
                                 print()
-                            print(end)
+                            print()
                             while end != 1 or end != 0:
                                 end = input("""Выберете следующее действие:
-    
+
  1. Ещё разок выбрать фигуру
  0. Завершить роботу программы
-    
+
 Ваше действие: """)
                                 if end.isdigit():
                                     end = int(end)
