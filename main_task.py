@@ -151,20 +151,19 @@ while True:
                                 continue
                         elif figure == 4:
                             for i in range(n):
+                                mid = n // 2 + n % 2
                                 if i < mid:
-                                    print('  ' * n, end='')
-                                    n -= 1
-                                    for j in range(i):
-                                        print('* ', end='')
-                                    for j in range(i + 1):
-                                        print('* ', end='')
-                                else:
-                                    print('  ' * (i + 1), end='')
-                                    n -= 1
-                                    for j in range(n + 1):
-                                        print('* ', end='')
                                     for j in range(n):
-                                        print('* ', end='')
+                                        if mid - i - 1 <= j <= mid + i - 1:
+                                            print('* ', end='')
+                                        else:
+                                            print('  ', end='')
+                                else:
+                                    for j in range(n - 1):
+                                        if i + 1 - mid <= j <= n - 2 - (i - mid):
+                                            print('* ', end='')
+                                        else:
+                                            print('  ', end='')
                                 print()
                             print()
                             end = input("""Выберете следующее действие:
@@ -181,17 +180,16 @@ while True:
                                 continue
                         elif figure == 5:
                             for i in range(n):
+                                mid = n // 2 + n % 2
                                 if i < mid:
-                                    print('  ' * n, end='')
-                                    n -= 1
-                                    for j in range(i):
-                                        print('* ', end='')
-                                    for j in range(i + 1):
-                                        print('* ', end='')
+                                    for j in range(n):
+                                        if mid - i - 1 <= j <= mid + i - 1:
+                                            print('* ', end='')
+                                        else:
+                                            print('  ', end='')
                                 else:
-                                    n -= 1
-                                    for j in range(2 * n + (j + 3)):
-                                        if j == i + 1 or j == n + (2 * mid - 1):
+                                    for j in range(n - 1):
+                                        if j == i + 1 - mid or j == n - 2 - (i - mid):
                                             print('* ', end='')
                                         else:
                                             print('  ', end='')
@@ -211,17 +209,16 @@ while True:
                                 continue
                         elif figure == 6:
                             for i in range(n):
+                                mid = n // 2 + n % 2
                                 if i < mid:
-                                    print('  ' * n, end='')
-                                    n -= 1
-                                    for j in range(i):
-                                        print('* ', end='')
-                                    for j in range(i + 1):
-                                        print('* ', end='')
+                                    for j in range(n):
+                                        if mid - i - 1 <= j <= mid + i - 1:
+                                            print('* ', end='')
+                                        else:
+                                            print('  ', end='')
                                 else:
-                                    n -= 1
-                                    for j in range(2 * n + (j + 3)):
-                                        if j == i + 1 or j == n + (2 * mid - 1) or j == n + i + 1:
+                                    for j in range(n - 1):
+                                        if j == i + 1 - mid or j == n - 2 - (i - mid) or j == mid - 1:
                                             print('* ', end='')
                                         else:
                                             print('  ', end='')

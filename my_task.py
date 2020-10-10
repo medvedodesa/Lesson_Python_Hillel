@@ -145,7 +145,7 @@ from random import randint
 
 lst = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
-n = 11
+n = 41
 
 # Пустой треугольник
 for i in range(n):
@@ -185,5 +185,47 @@ for i in range(n):
             else:
                 print('  ', end='')
     print()
+print()
+
+# Закрашеный ромб
+for i in range(n):
+    mid = n // 2 + n % 2
+    if i < mid:
+        for j in range(n):
+            if mid - i - 1 <= j <= mid + i - 1:
+                print('* ', end='')
+            else:
+                print('  ', end='')
+    else:
+        for j in range(n - 1):
+            if i + 1 - mid <= j <= n - 2 - (i - mid):
+                print('* ', end='')
+            else:
+                print('  ', end='')
+    print()
+
+print()
+
+# Закрашеный ромб а низ нет
+for i in range(n):
+    mid = n // 2 + n % 2
+    if i < mid:
+        for j in range(n):
+            if mid - i - 1 <= j <= mid + i - 1:
+                print('* ', end='')
+            else:
+                print('  ', end='')
+    else:
+        for j in range(n - 1):
+            if j == i + 1 - mid or j == n - 2 - (i - mid):
+                print('* ', end='')
+            else:
+                print('  ', end='')
+    print()
+
+print()
+
+# Закрашеный ромб а горизонтально
 
 
+print()
