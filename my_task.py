@@ -52,7 +52,6 @@
 
 from random import randint
 
-
 # def binary_search_2(array, key_value, left=0, right=None):
 #     if right is None:
 #         right = len(array)
@@ -101,4 +100,70 @@ from random import randint
 # print()
 # print(binary_alg(lst, key))
 
-print(55 % 36)
+
+# from random import randrange
+#
+# lis = [randrange(0, 1000) for _ in range(1000)]
+# print(lis)
+#
+# counter = 0
+# for i in range(len(lis)):
+#     flag = True
+#     for j in range(len(lis) - i - 1):
+#         if lis[j] > lis[j + 1]:
+#             lis[j], lis[j + 1] = lis[j + 1], lis[j]
+#             flag = False
+#     if flag:
+#         break
+#     counter += 1
+#
+# print(lis)
+# print(counter)
+#
+# num = int(input('Бинарный поиск: '))
+#
+#
+# def binary_sorce(lst, key_value):
+#     low = 0
+#     higth = len(lst)
+#     j = 0
+#     mid = (low + higth) // 2
+#     while lst[mid] != key_value and low <= higth:
+#         if lst[mid] < key_value:
+#             low = mid + 1
+#             j += 1
+#         else:
+#             higth = mid - 1
+#             j += 1
+#
+#         mid = (low + higth) // 2
+#
+#     return (j, True) if not (low > higth) else (j, False)
+#
+#
+# print(binary_sorce(lis, num))
+
+lst = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+n = 11
+for i in range(n):
+    for j in range(1, 2 * n):
+        if j == n - i or j == n + i or i == n - 1:
+            print('* ', end=' ')
+        else:
+            print('  ', end=' ')
+    print()
+
+print()
+
+for i in range(n):
+    for j in range(1, 2 * n):
+        if n - i <= j <= n + i:
+            print('* ', end=' ')
+        else:
+            print('  ', end=' ')
+    print()
+
+
+
+
