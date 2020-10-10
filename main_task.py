@@ -1,10 +1,157 @@
-empty_triangle = 'пустой треугольник'
-filled_triangle = 'закрашеный треугольник'
-empty_rhombus = 'пустой ромб'
-filled_rhombus = 'закрашей ромб'
-rhombus_50_50 = 'верхняя часть ромба закрашеная а нижняя пустая'
-rhombus_50_25_25 = 'верхняя часть ромба закрашеная а нижняя пустая и вертикальной линией'
+# Задача №29 (Рисование в консоли)
+
+"""
+При помощи вложенных циклов (можно while, можно for) нарисовать следующие фигуры
+представленные ниже. Пользователь вводит, с клавиатуры, высоту фигуры в символах.
+"""
+
+my_empty_triangle = 'пустой треугольник'
+my_filled_triangle = 'закрашеный треугольник'
+my_empty_rhombus = 'пустой ромб'
+my_filled_rhombus = 'закрашей ромб'
+my_rhombus_50_50 = 'верхняя часть ромба закрашеная а нижняя пустая'
+my_rhombus_50_25_25 = 'верхняя часть ромба закрашеная а нижняя пустая и вертикальной линией'
 end = None
+
+
+# Декоратор_2
+def remain(function):
+    global end
+
+    def wrapper(num):
+        global end
+        result = function(num)
+
+        print()
+
+        while end != 1 or end != 0:
+            end = input("""Выберете следующее действие:
+
+ 1. Ещё разок выбрать фигуру
+ 0. Завершить роботу программы
+
+Ваше действие: """)
+            if end.isdigit():
+                end = int(end)
+                if end == 1 or end == 0:
+                    break
+                elif end != 1 or end != 0:
+                    print()
+                    print('!!!ТАКОГО ДЕЙСТВИЯ НЕ СУЩЕСТВУЕТ!!!')
+                    print()
+                    continue
+            else:
+                print()
+                print('!!!ТАКОГО ДЕЙСТВИЯ НЕ СУЩЕСТВУЕТ!!!')
+                print()
+                continue
+        return result
+    return wrapper
+
+
+# 1 Пустой треугольник
+@remain
+def empty_triangle(num):
+    for i in range(num):
+        for j in range(1, 2 * num):
+            if j == num - i or j == num + i or i == num - 1:
+                print('* ', end='')
+            else:
+                print('  ', end='')
+        print()
+
+
+# 2 Закрашеный треугольник
+@remain
+def filled_triangle(num):
+    for i in range(num):
+        for j in range(1, 2 * num):
+            if num - i <= j <= num + i:
+                print('* ', end='')
+            else:
+                print('  ', end='')
+        print()
+
+
+# 3 Пустой ромб
+@remain
+def empty_rhombus(num):
+    for i in range(num):
+        middle = num // 2 + num % 2
+        if i < middle:
+            for j in range(num):
+                if j == middle - i - 1 or j == middle + i - 1:
+                    print('* ', end='')
+                else:
+                    print('  ', end='')
+        else:
+            for j in range(num - 1):
+                if j == i + 1 - middle or j == num - 2 - (i - middle):
+                    print('* ', end='')
+                else:
+                    print('  ', end='')
+        print()
+
+
+# 4 Закрашей ромб
+@remain
+def filled_rhombus(num):
+    for i in range(num):
+        middle = num // 2 + num % 2
+        if i < middle:
+            for j in range(num):
+                if middle - i - 1 <= j <= middle + i - 1:
+                    print('* ', end='')
+                else:
+                    print('  ', end='')
+        else:
+            for j in range(num - 1):
+                if i + 1 - middle <= j <= num - 2 - (i - middle):
+                    print('* ', end='')
+                else:
+                    print('  ', end='')
+        print()
+
+
+# 5 Верхняя часть ромба закрашеная а нижняя пустая
+@remain
+def polurhombus(num):
+    for i in range(num):
+        middle = num // 2 + num % 2
+        if i < middle:
+            for j in range(num):
+                if middle - i - 1 <= j <= middle + i - 1:
+                    print('* ', end='')
+                else:
+                    print('  ', end='')
+        else:
+            for j in range(num - 1):
+                if j == i + 1 - middle or j == num - 2 - (i - middle):
+                    print('* ', end='')
+                else:
+                    print('  ', end='')
+        print()
+
+
+# 6 Верхняя часть ромба закрашеная а нижняя пустая и вертикальной линией
+@remain
+def vertical_rhombus(num):
+    for i in range(num):
+        middle = num // 2 + num % 2
+        if i < middle:
+            for j in range(num):
+                if middle - i - 1 <= j <= middle + i - 1:
+                    print('* ', end='')
+                else:
+                    print('  ', end='')
+        else:
+            for j in range(num - 1):
+                if j == i + 1 - middle or j == num - 2 - (i - middle) or j == middle - 1:
+                    print('* ', end='')
+                else:
+                    print('  ', end='')
+        print()
+
 
 while True:
     if end == 0:
@@ -15,7 +162,6 @@ while True:
         continue
     else:
         print()
-
         figure = input("""Выберети желаемую фигуру:
 
   1. Пустой треугольник 
@@ -29,24 +175,23 @@ while True:
 Введите номер указаной фигуры: """)
 
         print()
-
         if figure.isdigit():
             figure = int(figure)
             if figure == 1:
-                print('Вы выбрали', empty_triangle)
+                print('Вы выбрали', my_empty_triangle)
             elif figure == 2:
-                print('Вы выбрали', filled_triangle)
+                print('Вы выбрали', my_filled_triangle)
             elif figure == 3:
-                print('Вы выбрали', empty_rhombus)
+                print('Вы выбрали', my_empty_rhombus)
             elif figure == 4:
-                print('Вы выбрали', filled_rhombus)
+                print('Вы выбрали', my_filled_rhombus)
             elif figure == 5:
-                print('Вы выбрали', rhombus_50_50)
+                print('Вы выбрали', my_rhombus_50_50)
             elif figure == 6:
-                print('Вы выбрали', rhombus_50_25_25)
+                print('Вы выбрали', my_rhombus_50_25_25)
             elif figure == 0:
                 end = 0
-                break
+                continue
             else:
                 print()
                 print('!!!ВЫ ВВЕЛИ НЕ СУЩЕСТВУЮЩУЮ ФИГУРУ!!!\n    --- Попробуйте ещё раз ---')
@@ -58,7 +203,7 @@ while True:
             print()
             continue
 
-            print()
+        print()
 
         while True:
             if end == 1 or end == 0:
@@ -66,13 +211,14 @@ while True:
             n = input("""      Введите любое НЕ ЧЁТНОЕ НАТУРАЛЬНОЕ число!
         *** Это будет высота вашей фигуры ***
 
-                !!!ПРЕДУПРЕЖДЕНИЕ!!!  
+              !!!ПРЕДУПРЕЖДЕНИЕ!!!  
 
 Если вы введёте ЧЁТНОЕ число то оно увеличится на одну 
 единицу. НАПРИМЕР: вы ввели число 2 оно станет 3!
 Или введите "0" что бы выбрать другую фугуру.
 
 Введите ваше число: """)
+
             if n.isdigit():
                 n = int(n)
                 if n == 0:
@@ -80,180 +226,35 @@ while True:
                     print('Вы вернулись в меню выбора фигуры.')
                     print()
                     break
+
                 elif n > 0:
                     if not n % 2:
-                            n += 1
+                        n += 1
+
                     print()
                     print('Высота вашей фигуры:', n)
                     print()
-                    mid = n // 2 + n % 2
+
                     if figure == 1:
-                        for i in range(n):
-                            for j in range(1, 2 * n):
-                                if j == n - i or j == n + i or i == n - 1:
-                                    print('* ', end='')
-                                else:
-                                    print('  ', end='')
-                            print()
+                        empty_triangle(n)
                         print()
-                        end = input("""*** Выберете следующее действие ***
-
- 1. Ещё разок выбрать фигуру
- 0. Завершить роботу программы
-
-Ваше действие: """)
-                        if end.isdigit():
-                            end = int(end)
-                            if end == 1 or end == 0:
-                                break
-                        else:
-                            continue
-                    elif figure == 1:
-                        for i in range(n):
-                            for j in range(1, 2 * n):
-                                if n - i <= j <= n + i:
-                                    print('* ', end='')
-                                else:
-                                    print('  ', end='')
-                            print()
-
+                    elif figure == 2:
+                        filled_triangle(n)
                         print()
-                        end = input("""Выберете следующее действие:
-
- 1. Ещёразок выбрать фигуру
- 0. Завершить роботу программы
-
-Ваше действие: """)
-                        if end.isdigit():
-                            end = int(end)
-                            if end == 1 or end == 0:
-                                break
-                        else:
-                            continue
                     elif figure == 3:
-                        for i in range(n):
-                            mid = n // 2 + n % 2
-                            if i < mid:
-                                for j in range(n):
-                                    if j == mid - i - 1 or j == mid + i - 1:
-                                        print('* ', end='')
-                                    else:
-                                        print('  ', end='')
-                            else:
-                                for j in range(n - 1):
-                                    if j == i + 1 - mid or j == n - 2 - (i - mid):
-                                        print('* ', end='')
-                                    else:
-                                        print('  ', end='')
-                            print()
+                        empty_rhombus(n)
                         print()
-                        end = input("""Выберете следующее действие:
-
- 1. Ещё разок выбрать фигуру
- 0. Завершить роботу программы
-
-Ваше действие: """)
-                        if end.isdigit():
-                            end = int(end)
-                            if end == 1 or end == 0:
-                                break
-                        else:
-                            continue
-                    elif figure == '4':
-                        for i in range(n):
-                            mid = n // 2 + n % 2
-                            if i < mid:
-                                for j in range(n):
-                                    if mid - i - 1 <= j <= mid + i - 1:
-                                        print('* ', end='')
-                                    else:
-                                        print('  ', end='')
-                            else:
-                                for j in range(n - 1):
-                                    if i + 1 - mid <= j <= n - 2 - (i - mid):
-                                        print('* ', end='')
-                                    else:
-                                        print('  ', end='')
-                            print()
+                    elif figure == 4:
+                        filled_rhombus(n)
                         print()
-                        end = input("""Выберете следующее действие:
-
- 1.     Ещё разок выбрать фигуру
- 0.     Завершить роботу программы
-
-Ваше действие: """)
-                        if end.isdigit():
-                            end = int(end)
-                            if end == 1 or end == 0:
-                                break
-                        else:
-                            continue
                     elif figure == 5:
-                        for i in range(n):
-                            mid = n // 2 + n % 2
-                            if i < mid:
-                                for j in range(n):
-                                    if mid - i - 1 <= j <= mid + i - 1:
-                                        print('* ', end='')
-                                    else:
-                                        print('  ', end='')
-                            else:
-                                for j in range(n - 1):
-                                    if j == i + 1 - mid or j == n - 2 - (i - mid):
-                                        print('* ', end='')
-                                    else:
-                                        print('  ', end='')
-                            print()
+                        polurhombus(n)
                         print()
-                        end = input("""Выберете следующее действие:
-
- 1. Ещё разок выбрать фигуру
- 0. Завершить роботу программы
-
-Ваше дествие: """)
-                        if end.isdigit():
-                            end = int(end)
-                            if end == 1 or end == 0:
-                                break
-                        else:
-                            continue
                     elif figure == 6:
-                        for i in range(n):
-                            mid = n // 2 + n % 2
-                            if i < mid:
-                                for j in range(n):
-                                    if mid - i - 1 <= j <= mid + i - 1:
-                                        print('* ', end='')
-                                    else:
-                                        print('  ', end='')
-                            else:
-                                for j in range(n - 1):
-                                    if j == i + 1 - mid or j == n - 2 - (i - mid) or j == mid - 1:
-                                        print('* ', end='')
-                                    else:
-                                        print('  ', end='')
-                            print()
+                        vertical_rhombus(n)
                         print()
-                        while end != 1 or end != 0:
-                            end = input("""Выберете следующее действие:
-
- 1. Ещё разок выбрать фигуру
- 0. Завершить роботу программы
-
-Ваше действие: """)
-                            if end.isdigit():
-                                end = int(end)
-                                if end != 1 or end != 0:
-                                    break
-                            elif end != 1 or end != 0:
-                                print()
-                                print('!!!ТАКОГО ДЕЙСТВИЯ НЕ СУЩЕСТВУЕТ!!!')
-                                print()
-                                continue
             else:
                 print()
-                print('!!!ВЫ ВВЕЛИ НЕ ЧИСЛО!!!')
+                print('!!!ВЫ ВВЕЛИ НЕ НАТУРАЛЬНОЕ ЧИСЛО!!!')
                 print()
                 continue
-
-
