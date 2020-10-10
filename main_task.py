@@ -153,6 +153,7 @@ def vertical_rhombus(num):
         print()
 
 
+# ТУТ НАЧАЛО ПРОГРАММЫ!!!
 while True:
     if end == 0:
         print('ВЫ ЗАВЕРШИЛИ РАБОТУ ПРОГРАММЫ!')
