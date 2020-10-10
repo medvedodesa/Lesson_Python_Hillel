@@ -146,24 +146,44 @@ from random import randint
 lst = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 n = 11
+
+# Пустой треугольник
 for i in range(n):
     for j in range(1, 2 * n):
         if j == n - i or j == n + i or i == n - 1:
-            print('* ', end=' ')
+            print('* ', end='')
         else:
-            print('  ', end=' ')
+            print('  ', end='')
     print()
 
 print()
 
+# Закрашеный треугольник
 for i in range(n):
     for j in range(1, 2 * n):
         if n - i <= j <= n + i:
-            print('* ', end=' ')
+            print('* ', end='')
         else:
-            print('  ', end=' ')
+            print('  ', end='')
     print()
 
+print()
 
+# Пустой ромб
+for i in range(n):
+    mid = n // 2 + n % 2
+    if i < mid:
+        for j in range(n):
+            if j == mid - i - 1 or j == mid + i - 1:
+                print('* ', end='')
+            else:
+                print('  ', end='')
+    else:
+        for j in range(n - 1):
+            if j == i + 1 - mid or j == n - 2 - (i - mid):
+                print('* ', end='')
+            else:
+                print('  ', end='')
+    print()
 
 
