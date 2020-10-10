@@ -47,13 +47,23 @@ while True:
             elif figure == 0:
                 end = 0
                 break
+            else:
+                print()
+                print('!!!ВЫ ВВЕЛИ НЕ СУЩЕСТВУЮЩУЮ ФИГУРУ!!!\n    --- Попробуйте ещё раз ---')
+                print()
+                continue
+        else:
+            print()
+            print('!!!ВЫ ВВЕЛИ НЕ СУЩЕСТВУЮЩУЮ ФИГУРУ!!!\n    --- Попробуйте ещё раз ---')
+            print()
+            continue
 
             print()
 
-            while True:
-                if end == 1 or end == 0:
-                    break
-                n = input("""      Введите любое НЕ ЧЁТНОЕ НАТУРАЛЬНОЕ число!
+        while True:
+            if end == 1 or end == 0:
+                break
+            n = input("""      Введите любое НЕ ЧЁТНОЕ НАТУРАЛЬНОЕ число!
         *** Это будет высота вашей фигуры ***
 
                 !!!ПРЕДУПРЕЖДЕНИЕ!!!  
@@ -63,191 +73,187 @@ while True:
 Или введите "0" что бы выбрать другую фугуру.
 
 Введите ваше число: """)
-                if n.isdigit():
-                    n = int(n)
-                    if n == 0:
-                        print()
-                        print('Вы вернулись в меню выбора фигуры.')
-                        print()
-                        break
-                    elif n > 0:
-                        if not n % 2:
+            if n.isdigit():
+                n = int(n)
+                if n == 0:
+                    print()
+                    print('Вы вернулись в меню выбора фигуры.')
+                    print()
+                    break
+                elif n > 0:
+                    if not n % 2:
                             n += 1
-                        print()
-                        print('Высота вашей фигуры:', n)
-                        print()
-                        mid = n // 2 + n % 2
-                        if figure == 1:
-                            for i in range(n):
-                                for j in range(1, 2 * n):
-                                    if j == n - i or j == n + i or i == n - 1:
-                                        print('* ', end='')
-                                    else:
-                                        print('  ', end='')
-                                print()
+                    print()
+                    print('Высота вашей фигуры:', n)
+                    print()
+                    mid = n // 2 + n % 2
+                    if figure == 1:
+                        for i in range(n):
+                            for j in range(1, 2 * n):
+                                if j == n - i or j == n + i or i == n - 1:
+                                    print('* ', end='')
+                                else:
+                                    print('  ', end='')
                             print()
-                            end = input("""*** Выберете следующее действие ***
+                        print()
+                        end = input("""*** Выберете следующее действие ***
 
  1. Ещё разок выбрать фигуру
  0. Завершить роботу программы
 
 Ваше действие: """)
-                            if end.isdigit():
-                                end = int(end)
-                                if end == 1 or end == 0:
-                                    break
-                            else:
-                                continue
-                        elif figure == 2:
-                            for i in range(n):
-                                for j in range(1, 2 * n):
-                                    if n - i <= j <= n + i:
-                                        print('* ', end='')
-                                    else:
-                                        print('  ', end='')
-                                print()
-
+                        if end.isdigit():
+                            end = int(end)
+                            if end == 1 or end == 0:
+                                break
+                        else:
+                            continue
+                    elif figure == 1:
+                        for i in range(n):
+                            for j in range(1, 2 * n):
+                                if n - i <= j <= n + i:
+                                    print('* ', end='')
+                                else:
+                                    print('  ', end='')
                             print()
-                            end = input("""Выберете следующее действие:
+
+                        print()
+                        end = input("""Выберете следующее действие:
 
  1. Ещёразок выбрать фигуру
  0. Завершить роботу программы
 
 Ваше действие: """)
-                            if end.isdigit():
-                                end = int(end)
-                                if end == 1 or end == 0:
-                                    break
+                        if end.isdigit():
+                            end = int(end)
+                            if end == 1 or end == 0:
+                                break
+                        else:
+                            continue
+                    elif figure == 3:
+                        for i in range(n):
+                            mid = n // 2 + n % 2
+                            if i < mid:
+                                for j in range(n):
+                                    if j == mid - i - 1 or j == mid + i - 1:
+                                        print('* ', end='')
+                                    else:
+                                        print('  ', end='')
                             else:
-                                continue
-                        elif figure == 3:
-                            for i in range(n):
-                                mid = n // 2 + n % 2
-                                if i < mid:
-                                    for j in range(n):
-                                        if j == mid - i - 1 or j == mid + i - 1:
-                                            print('* ', end='')
-                                        else:
-                                            print('  ', end='')
-                                else:
-                                    for j in range(n - 1):
-                                        if j == i + 1 - mid or j == n - 2 - (i - mid):
-                                            print('* ', end='')
-                                        else:
-                                            print('  ', end='')
-                                print()
+                                for j in range(n - 1):
+                                    if j == i + 1 - mid or j == n - 2 - (i - mid):
+                                        print('* ', end='')
+                                    else:
+                                        print('  ', end='')
                             print()
-                            end = input("""Выберете следующее действие:
+                        print()
+                        end = input("""Выберете следующее действие:
 
  1. Ещё разок выбрать фигуру
  0. Завершить роботу программы
 
 Ваше действие: """)
-                            if end.isdigit():
-                                end = int(end)
-                                if end == 1 or end == 0:
-                                    break
+                        if end.isdigit():
+                            end = int(end)
+                            if end == 1 or end == 0:
+                                break
+                        else:
+                            continue
+                    elif figure == '4':
+                        for i in range(n):
+                            mid = n // 2 + n % 2
+                            if i < mid:
+                                for j in range(n):
+                                    if mid - i - 1 <= j <= mid + i - 1:
+                                        print('* ', end='')
+                                    else:
+                                        print('  ', end='')
                             else:
-                                continue
-                        elif figure == 4:
-                            for i in range(n):
-                                mid = n // 2 + n % 2
-                                if i < mid:
-                                    for j in range(n):
-                                        if mid - i - 1 <= j <= mid + i - 1:
-                                            print('* ', end='')
-                                        else:
-                                            print('  ', end='')
-                                else:
-                                    for j in range(n - 1):
-                                        if i + 1 - mid <= j <= n - 2 - (i - mid):
-                                            print('* ', end='')
-                                        else:
-                                            print('  ', end='')
-                                print()
+                                for j in range(n - 1):
+                                    if i + 1 - mid <= j <= n - 2 - (i - mid):
+                                        print('* ', end='')
+                                    else:
+                                        print('  ', end='')
                             print()
-                            end = input("""Выберете следующее действие:
+                        print()
+                        end = input("""Выберете следующее действие:
 
  1.     Ещё разок выбрать фигуру
  0.     Завершить роботу программы
 
 Ваше действие: """)
-                            if end.isdigit():
-                                end = int(end)
-                                if end == 1 or end == 0:
-                                    break
+                        if end.isdigit():
+                            end = int(end)
+                            if end == 1 or end == 0:
+                                break
+                        else:
+                            continue
+                    elif figure == 5:
+                        for i in range(n):
+                            mid = n // 2 + n % 2
+                            if i < mid:
+                                for j in range(n):
+                                    if mid - i - 1 <= j <= mid + i - 1:
+                                        print('* ', end='')
+                                    else:
+                                        print('  ', end='')
                             else:
-                                continue
-                        elif figure == 5:
-                            for i in range(n):
-                                mid = n // 2 + n % 2
-                                if i < mid:
-                                    for j in range(n):
-                                        if mid - i - 1 <= j <= mid + i - 1:
-                                            print('* ', end='')
-                                        else:
-                                            print('  ', end='')
-                                else:
-                                    for j in range(n - 1):
-                                        if j == i + 1 - mid or j == n - 2 - (i - mid):
-                                            print('* ', end='')
-                                        else:
-                                            print('  ', end='')
-                                print()
+                                for j in range(n - 1):
+                                    if j == i + 1 - mid or j == n - 2 - (i - mid):
+                                        print('* ', end='')
+                                    else:
+                                        print('  ', end='')
                             print()
-                            end = input("""Выберете следующее действие:
+                        print()
+                        end = input("""Выберете следующее действие:
 
  1. Ещё разок выбрать фигуру
  0. Завершить роботу программы
 
 Ваше дествие: """)
-                            if end.isdigit():
-                                end = int(end)
-                                if end == 1 or end == 0:
-                                    break
+                        if end.isdigit():
+                            end = int(end)
+                            if end == 1 or end == 0:
+                                break
+                        else:
+                            continue
+                    elif figure == 6:
+                        for i in range(n):
+                            mid = n // 2 + n % 2
+                            if i < mid:
+                                for j in range(n):
+                                    if mid - i - 1 <= j <= mid + i - 1:
+                                        print('* ', end='')
+                                    else:
+                                        print('  ', end='')
                             else:
-                                continue
-                        elif figure == 6:
-                            for i in range(n):
-                                mid = n // 2 + n % 2
-                                if i < mid:
-                                    for j in range(n):
-                                        if mid - i - 1 <= j <= mid + i - 1:
-                                            print('* ', end='')
-                                        else:
-                                            print('  ', end='')
-                                else:
-                                    for j in range(n - 1):
-                                        if j == i + 1 - mid or j == n - 2 - (i - mid) or j == mid - 1:
-                                            print('* ', end='')
-                                        else:
-                                            print('  ', end='')
-                                print()
+                                for j in range(n - 1):
+                                    if j == i + 1 - mid or j == n - 2 - (i - mid) or j == mid - 1:
+                                        print('* ', end='')
+                                    else:
+                                        print('  ', end='')
                             print()
-                            while end != 1 or end != 0:
-                                end = input("""Выберете следующее действие:
+                        print()
+                        while end != 1 or end != 0:
+                            end = input("""Выберете следующее действие:
 
  1. Ещё разок выбрать фигуру
  0. Завершить роботу программы
 
 Ваше действие: """)
-                                if end.isdigit():
-                                    end = int(end)
-                                    if end != 1 or end != 0:
-                                        break
-                                elif end != 1 or end != 0:
-                                    print()
-                                    print('!!!ТАКОГО ДЕЙСТВИЯ НЕ СУЩЕСТВУЕТ!!!')
-                                    print()
-                                    continue
-                else:
-                    print()
-                    print('!!!ВЫ ВВЕЛИ НЕ ЧИСЛО!!!')
-                    print()
-                    continue
+                            if end.isdigit():
+                                end = int(end)
+                                if end != 1 or end != 0:
+                                    break
+                            elif end != 1 or end != 0:
+                                print()
+                                print('!!!ТАКОГО ДЕЙСТВИЯ НЕ СУЩЕСТВУЕТ!!!')
+                                print()
+                                continue
+            else:
+                print()
+                print('!!!ВЫ ВВЕЛИ НЕ ЧИСЛО!!!')
+                print()
+                continue
 
-        else:
-            print()
-            print('!!!ВЫ ВВЕЛИ НЕ СУЩЕСТВУЮЩУЮ ФИГУРУ!!!\n    --- Попробуйте ещё раз ---')
-            print()
-            continue
+
