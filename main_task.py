@@ -14,7 +14,7 @@ my_rhombus_50_25_25 = 'верхняя часть ромба закрашеная
 end = None
 
 
-# Декоратор_2
+# Декоратор
 def remain(function):
     global end
 
