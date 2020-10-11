@@ -10,8 +10,7 @@
 Задача решается в одну строку.
 """
 
-# ТУТ МОЖНО ЗАПИСАТЬ БЕЗ 'list'. БУДЕТ ТОЖЕ САМОЕ!!!
-dictionary = dict(list((key, chr(key)) for key in range(32, 128)))
+dictionary = dict((key, chr(key)) for key in range(32, 128))
 
 # ОТ 32 ДО 127 ВКЛЮЧИТЕЛЬНО
 print(dictionary.items())
