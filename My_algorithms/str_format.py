@@ -11,18 +11,8 @@ print(a)
 a += 1
 print(a)
 
+print('Переменая а равна %s' % a)
+
 s = 'тут я напишу \
 всё что я хочу'
 print(s)
-
-a = 5
-b = 10
-
-aa = a
-bb = b
-
-a = bb
-b = aa
-
-print('he is \b``work')
-

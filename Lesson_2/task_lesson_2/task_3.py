@@ -1,11 +1,9 @@
-# Задачи №3(Немного усовершенствованая)
+# Условие задачи №3 (ESCAPE символы)
 
-'''
+"""
 Написать программу, которая выводит
 в консоль таблицу Escape-последовательностей:
-'''
-
-r = input('Введите слово "esc"...')
+"""
 
 esc = 'Escape sequences:\n\
 \n\
@@ -17,10 +15,6 @@ esc = 'Escape sequences:\n\
 \\" \t\tDoubel quotation mark "\n\
 \\\'\t\tSingle quotation mark \''
 
+print(esc)
 
-if 'esc' in r:
-    print(esc)
-else:
-    print('Error Enter')
-
-# Добавил в задачу оператор IF
+# Выполнил задачу через экранизацию!

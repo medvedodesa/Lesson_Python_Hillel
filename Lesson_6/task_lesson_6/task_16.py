@@ -17,6 +17,9 @@
 
 import random
 
+
+del_num = None
+
 num = int(input('Введите кол-во элементов в списке: '))
 lis = [random.randint(1, 1000) for i in range(num)]
 print(lis)
@@ -32,4 +35,5 @@ while True:
         break
 lis.pop()
 print(lis)
+
 print('Вы удалили число', del_num, 'из вашего списка!')
