@@ -57,7 +57,10 @@ for i in file_old:
         file = ' '.join(file)
         file = file[:file.find('.') + 1] + (' ' * (20 - (file.find('.') + 1))) + file[file.find('.') + 1:]
 
+    # ПЕРЕМЕННАЯ FILE_NEW ХРАНИТ РЕЗУЛЬТАТ ФАЙЛА DST.TXT В ВИДЕ СПИСКА
+    # (ЭТО НЕ ОБЯЗАТЕЛЬНО, ПРОСТО СДЕЛАЛ ЧТО БЫ МОЖНО БЫЛО ВЫВЕСТИ ВЕСЬ РЕЗУЛЬТАТ НА ЭКРАН)
     file_new.append(file)
+    # ТУТ Я ЗАПИСЫВАЮ ПОЛУЧИВШУЮСЯ (РЕЗУЛЬТАТ СТРОКИ) СТРОКУ В НОВЫЙ ФАЙЛ DST.TXT
     file_output.write(file + '\n')
 
 file_input.close()
