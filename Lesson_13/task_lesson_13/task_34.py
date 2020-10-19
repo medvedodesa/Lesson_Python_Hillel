@@ -31,7 +31,8 @@ file_output = open('dst.txt', 'w', encoding='utf-8')
 file_old = file_input.readlines()
 
 file_new = []
-ofd = []
+# OOD - OUTPUT_ON_DISPLAY
+ood = []
 count = 0
 suma = 0
 
@@ -49,7 +50,7 @@ for i in file_old:
         file = [str(i) for i in file]
         file = ' '.join(file)
         file = file[:file.find('.') + 1] + (' ' * (20 - (file.find('.') + 1))) + file[file.find('.') + 1:]
-        ofd.append(file)
+        ood.append(file)
     # А ЕСЛИ ТАКОГО НЕТ ТО НЕ ЗАПИСЫВАЕТ
     else:
         file = [str(i) for i in file]
@@ -68,7 +69,7 @@ file_output.close()
 
 print('Ученики, чей средний балл меньше 5:')
 print()
-for i in ofd:
+for i in ood:
     print(i)
 
 print()
