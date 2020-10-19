@@ -38,8 +38,7 @@ suma = 0
 
 # ПО СТРОЧНО ПЕРЕБРАЛ ВЕСЬ ФАЙЛ SRC.TXT
 for i in file_old:
-    file = i.rstrip('\n')
-    file = file.split()
+    file = i.rstrip('\n').split()
     file = [(int(file[i]) if file[i].isdigit() else file[i]) for i in range(len(file))]
     file = [file[1], file[0][0] + '.', round((sum(file[2:]) / (len(file) - 2)), 2)]
     suma += file[2]
@@ -49,13 +48,14 @@ for i in file_old:
     if file[2] < 5:
         file = [str(i) for i in file]
         file = ' '.join(file)
-        file = file[:file.find('.') + 1] + (' ' * (20 - (file.find('.') + 1))) + file[file.find('.') + 1:]
+        file = file[:file.find('.') + 1] + (' ' * (20 - (file.find('.') + 2))) + file[file.find('.') + 1:]
         ood.append(file)
     # А ЕСЛИ ТАКОГО НЕТ ТО НЕ ЗАПИСЫВАЕТ
     else:
         file = [str(i) for i in file]
         file = ' '.join(file)
-        file = file[:file.find('.') + 1] + (' ' * (20 - (file.find('.') + 1))) + file[file.find('.') + 1:]
+        # (' ' * (20 - (file.find('.') "+ 2"))) - ОТ НАЧАЛА СТРОКИ ДО НАЧАЛА СРЕДНЕГО БАЛЛА 20 СИМВОЛОВ
+        file = file[:file.find('.') + 1] + (' ' * (20 - (file.find('.') + 2))) + file[file.find('.') + 1:]
 
     # ПЕРЕМЕННАЯ FILE_NEW ХРАНИТ РЕЗУЛЬТАТ ФАЙЛА DST.TXT В ВИДЕ СПИСКА
     # (ЭТО НЕ ОБЯЗАТЕЛЬНО, ПРОСТО СДЕЛАЛ ЧТО БЫ МОЖНО БЫЛО ВЫВЕСТИ ВЕСЬ РЕЗУЛЬТАТ НА ЭКРАН)
@@ -66,7 +66,7 @@ for i in file_old:
 file_input.close()
 file_output.close()
 
-# ТУТ МОЖНО ПОСМОТРЕТЬ ВЫВОД ТОГО ЧТО ЗАПИСАЛОСЬ В DST.TXT
+# ТУТ МОЖНО ПОСМОТРЕТЬ ВЫВОД ТОГО ЧТО ЗАПИСАЛОСЬ В ФАЙЛ DST.TXT
 # pprint(file_new)
 # print('\n')
 
