@@ -1,17 +1,11 @@
 # ЧИСЛА ФИБОНАЧЧИ С ПОМОШЬЮ ЦИКЛА
-def fibonacci_1(number):
-    n1 = n2 = 1
-    for i in range(number - 2):
-        n = n1 + n2
-        n1 = n2
-        n2 = n
+# Последовательность: 1, 2, 3, 5, 8, 13, 21, 34, 34, 55, 89, ...
+def fibonacci(number):
+    n = None
+    n1 = 0
+    n2 = 1
 
-    return n
-
-
-def fibonacci_2(number):
-    n1 = n2 = 1
-    while (number - 2) > 0:
+    while number > 0:
         n = n1 + n2
         n1 = n2
         n2 = n
@@ -22,5 +16,4 @@ def fibonacci_2(number):
 
 # Проверяем, что оно работает
 num = int(input('Введите любое число: '))
-print(fibonacci_1(num))
-print(fibonacci_2(num))
+print(fibonacci(num))
