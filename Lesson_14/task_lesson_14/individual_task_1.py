@@ -21,8 +21,8 @@
 
 from random import randint
 
-N = int(input('Введите кол - во строк:'))
-M = int(input('Введите кол - во столбцов:'))
+N = int(input('Введите кол - во строк: '))
+M = int(input('Введите кол - во столбцов: '))
 
 suma = 0
 
@@ -30,7 +30,7 @@ matrix = [[randint(10, 51) for j in range(M)] for i in range(N)]
 
 for i in range(N):
     for j in range(M):
-        print(' ', matrix[i][j], end=' ')
+        print('', matrix[i][j], '', end=' ')
         suma += matrix[i][j]
     print('|', suma)
     suma = 0
