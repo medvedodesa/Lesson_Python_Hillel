@@ -23,16 +23,11 @@
 Выравнивание колонок - желательно!
 """
 
-from pprint import pprint
-
 file_input = open('src.txt', encoding='utf-8')
 file_output = open('dst.txt', 'w', encoding='utf-8')
 
 file_old = file_input.readlines()
 
-file_new = []
-# OOD - OUTPUT_ON_DISPLAY
-ood = []
 count = 0
 suma = 0
 
@@ -49,7 +44,7 @@ for i in file_old:
         file = [str(i) for i in file]
         file = ' '.join(file)
         file = file[:file.find('.') + 1] + (' ' * (20 - (file.find('.') + 2))) + file[file.find('.') + 1:]
-        ood.append(file)
+        print(file)
     # А ЕСЛИ ТАКОГО НЕТ ТО НЕ ЗАПИСЫВАЕТ
     else:
         file = [str(i) for i in file]
@@ -57,23 +52,11 @@ for i in file_old:
         # (' ' * (20 - (file.find('.') "+ 2"))) - ОТ НАЧАЛА СТРОКИ ДО НАЧАЛА СРЕДНЕГО БАЛЛА 20 СИМВОЛОВ
         file = file[:file.find('.') + 1] + (' ' * (20 - (file.find('.') + 2))) + file[file.find('.') + 1:]
 
-    # ПЕРЕМЕННАЯ FILE_NEW ХРАНИТ РЕЗУЛЬТАТ ФАЙЛА DST.TXT В ВИДЕ СПИСКА
-    # (ЭТО НЕ ОБЯЗАТЕЛЬНО, ПРОСТО СДЕЛАЛ ЧТО БЫ МОЖНО БЫЛО ВЫВЕСТИ ВЕСЬ РЕЗУЛЬТАТ НА ЭКРАН)
-    file_new.append(file)
     # ТУТ Я ЗАПИСЫВАЮ ПОЛУЧИВШУЮСЯ (РЕЗУЛЬТАТ СТРОКИ) СТРОКУ В НОВЫЙ ФАЙЛ DST.TXT
     file_output.write(file + '\n')
 
 file_input.close()
 file_output.close()
-
-# ТУТ МОЖНО ПОСМОТРЕТЬ ВЫВОД ТОГО ЧТО ЗАПИСАЛОСЬ В ФАЙЛ DST.TXT
-# pprint(file_new)
-# print('\n')
-
-print('Ученики, чей средний балл меньше 5:')
-print()
-for i in ood:
-    print(i)
 
 print()
 print('Средний балл всего класса: ', round((suma / count), 2))

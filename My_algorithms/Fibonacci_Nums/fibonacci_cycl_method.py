@@ -1,19 +1,32 @@
 # ЧИСЛА ФИБОНАЧЧИ С ПОМОШЬЮ ЦИКЛА
-# Последовательность: 1, 2, 3, 5, 8, 13, 21, 34, 34, 55, 89, ...
-def fibonacci(number):
+# Последовательность: 1, 1, 2, 3, 5, 8, 13, 21, 34, 34, 55, 89, ...
+def fibonacci_1(number):
     n = None
-    n1 = 0
-    n2 = 1
+    n1 = n2 = 1
+    print(n1, n2, end=' ')
 
-    while number > 0:
+    while number - 2 > 0:
         n = n1 + n2
         n1 = n2
         n2 = n
+        print(n, end=' ')
         number -= 1
 
-    return n
+
+def fibonacci_2(number):
+    n = None
+    n1 = n2 = 1
+    print(n1, n2, end=' ')
+
+    for _ in range(2, num):
+        n = n1 + n2
+        n1 = n2
+        n2 = n
+        print(n, end=' ')
 
 
 # Проверяем, что оно работает
 num = int(input('Введите любое число: '))
-print(fibonacci(num))
+fibonacci_1(num)
+print()
+fibonacci_2(num)
