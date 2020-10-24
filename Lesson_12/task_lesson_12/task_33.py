@@ -17,6 +17,8 @@ d = {
 }
 """
 
+from pprint import pprint
+
 d = {
 
    'apple': ['malum', 'pomum', 'popula'],
@@ -27,21 +29,15 @@ d = {
 
 }
 
-print(d)
+pprint(d)
 print()
 dict_revers = {}
 
-# РАЗВОРАЧИВАЕМ СЛОВАРЬ
 for key, value in d.items():
-    for i in range(0, len(value)):
-        print(value[i], key)
+    for element in value:
+        if element not in dict_revers:
+            dict_revers[element] = []
 
-        # ТАК КАК ЗНАЧЕНИЕ 'malum' ВЫСТУПАЕТ В РОЛИ КЛЮЧА И ПОВТОРЯЕТСЯ (Я ВЫВЕДУ ПЕРВЫЙ ЕГО КЛЮЧ)!
-        if value[i] in dict_revers:
-            continue
-        else:
-            dict_revers[value[i]] = key
-    print()
+        dict_revers[element].append(key)
 
-# НОВЫЙ СЛОВАРЬ ГДЕ ВМЕСТО (КЛЮЧ : ЗНАЧЕНИЕ) УЖЕ (ЗНАЧЕНИЕ : КЛЮЧ).
-print(dict_revers)
+pprint(dict_revers)
