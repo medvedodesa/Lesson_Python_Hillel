@@ -24,21 +24,21 @@ from random import randint
 N = int(input('Введите кол - во строк: '))
 M = int(input('Введите кол - во столбцов: '))
 
-suma = 0
-
 matrix = [[randint(10, 51) for j in range(M)] for i in range(N)]
+
+suma = 0
 
 for i in range(N):
     for j in range(M):
-        print('', matrix[i][j], '', end=' ')
+        print('', matrix[i][j], end=' ')
         suma += matrix[i][j]
     print('|', suma)
     suma = 0
 
-print('---  ' * M)
+print('--- ' * M)
 
 for j in range(M):
     for i in range(N):
         suma += matrix[i][j]
-    print(suma, ' ', sep='', end=' ')
+    print(' ' * (3 - len(str(suma))) + str(suma) + ' ', end='')
     suma = 0
