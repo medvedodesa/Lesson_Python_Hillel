@@ -40,7 +40,8 @@
 from random import randint
 
 
-def sort_list(lis, len_lis, suma_lis):
+def sort_list(lis, suma_lis):
+    len_lis = len(lis)
     # ПЛЮСУЮ СУММУ СТОЛБЦОВ
     for i in range(len_lis):
         for j in range(len_lis):
@@ -70,9 +71,9 @@ def sort_list(lis, len_lis, suma_lis):
                 break
 
 
-def output_on_display(lis, len_lis, suma_lis):
-    # ВЫВОЖУ КОНЕЧНЫЙ РЕЗУЛЬТАТ ЧЕРЕЗ ВТОРУЮ ФУНКЦИЮ
+def output_on_display(lis, suma_lis):
     len_lis = len(lis)
+    # ВЫВОЖУ КОНЕЧНЫЙ РЕЗУЛЬТАТ ЧЕРЕЗ ВТОРУЮ ФУНКЦИЮ
     for i in range(len_lis):
         for j in range(len_lis):
             print(' ' * (3 - len(str(lis[i][j]))) + str(lis[i][j]) + ' ', end='')
@@ -97,5 +98,5 @@ matrix = [[randint(1, 51) for j in range(lening)] for i in range(lening)]
 len_list = len(matrix)
 suma_list = [0] * len_list
 
-sort_list(matrix, len_list, suma_list)
-output_on_display(matrix, len_list, suma_list)
+sort_list(matrix, suma_list)
+output_on_display(matrix, suma_list)
