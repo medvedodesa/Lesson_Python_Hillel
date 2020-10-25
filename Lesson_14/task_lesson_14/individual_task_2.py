@@ -40,14 +40,13 @@
 from random import randint
 
 
-def sort_list(lis, suma_lis):
-    len_lis = len(lis)
-    # ПЛЮСУЮ СУММУ СТОЛБЦОВ
+def sort_list(lis, len_lis, suma_lis):
+    # ПЛЮСУЮ СУММУ КАЖДОГО ЭЛЕММЕНТА СТОЛБЦА
     for i in range(len_lis):
         for j in range(len_lis):
             suma_lis[j] += lis[i][j]
 
-    #  СОРТИРУЮ СУММУ СТОЛБЦЫ И ИХ СТОЛБЦЫ ПО ВОЗРАСТАНИЮ
+    #  СОРТИРУЮ СУММУ СТОЛБЦОВ И ИХ СТОЛБЦЫ ПО ВОЗРАСТАНИЮ
     for i in range(len(suma_lis)):
         flag = True
         for j in range(len(suma_lis) - i - 1):
@@ -59,7 +58,7 @@ def sort_list(lis, suma_lis):
         if flag:
             break
 
-    # СОРТИРУЕМ СТОЛБЦИ ЧЁТНЫЕ - СНИЗУ ВВЕРХ, НЕЧЁТНЫЕ - СВЕРХУ ВНИЗ
+    # СОРТИРУЕМ СТОЛБЦЫ ЧЁТНЫЕ - СНИЗУ ВВЕРХ, НЕЧЁТНЫЕ - СВЕРХУ ВНИЗ
     for j in range(len(lis)):
         for i in range(len(lis) - 1):
             flag = True
@@ -71,8 +70,7 @@ def sort_list(lis, suma_lis):
                 break
 
 
-def output_on_display(lis, suma_lis):
-    len_lis = len(lis)
+def output_on_display(lis, len_lis, suma_lis):
     # ВЫВОЖУ КОНЕЧНЫЙ РЕЗУЛЬТАТ ЧЕРЕЗ ВТОРУЮ ФУНКЦИЮ
     for i in range(len_lis):
         for j in range(len_lis):
@@ -95,8 +93,9 @@ while True:
 
 matrix = [[randint(1, 51) for j in range(lening)] for i in range(lening)]
 
+# МОЖНО УКАЗАТЬ ВМЕСТО -len(matrix)- ПЕРЕМЕННУЮ -lening-
 len_list = len(matrix)
 suma_list = [0] * len_list
 
-sort_list(matrix, suma_list)
-output_on_display(matrix, suma_list)
+sort_list(matrix, len_list, suma_list)
+output_on_display(matrix, len_list, suma_list)
