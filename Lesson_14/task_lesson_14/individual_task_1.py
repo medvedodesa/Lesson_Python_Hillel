@@ -26,19 +26,19 @@ M = int(input('Введите кол - во столбцов: '))
 
 matrix = [[randint(10, 51) for j in range(M)] for i in range(N)]
 
+suma_list = [0] * M
 suma = 0
 
 for i in range(N):
     for j in range(M):
         print('', matrix[i][j], end=' ')
         suma += matrix[i][j]
+        suma_list[j] += matrix[i][j]
     print('|', suma)
     suma = 0
 
 print('--- ' * M)
 
-for j in range(M):
-    for i in range(N):
-        suma += matrix[i][j]
-    print(' ' * (3 - len(str(suma))) + str(suma) + ' ', end='')
-    suma = 0
+for i in range(len(suma_list)):
+    print(' ' * (3 - len(str(suma_list[i]))) + str(suma_list[i]) + ' ', end='')
+
