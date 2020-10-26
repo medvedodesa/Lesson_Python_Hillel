@@ -58,5 +58,9 @@ for line in listGrout.out_on_display():
         print(line[2][grade] + ' ' * (3 - len(line[2][grade])), end='')
     print('|')
 
+# МОЖЕМ ВЫВЕСТИ ИМЕНА И ХАРАКТЕТИСТИКИ СТУДЕНТОВ НА ПРЯМУЮ ИЗ КЛАССА
+# print()
+# print(listGrout.out_on_display())
+
 
 
