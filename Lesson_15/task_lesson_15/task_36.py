@@ -46,12 +46,12 @@ for i in information_student:
 
 groupStudent.close()
 
-print('| {name:^15}|{age:^5}|{grades:^37}|'.format(name='NAME', age='AGE', grades='GRADE'))
-print(' ' + '-' * 60 + ' ')
+print('|{name:^15}|{age:^5}|{grades:^37}|'.format(name='NAME', age='AGE', grades='GRADES'))
+print(' ' + '-' * 59 + ' ')
 
 # ДЕЛАЮ КРАСИВЫЙ ВЫВОД --class Group-- ЕГО МЕТОДА --out_on_display--
 for line in listGrout.out_on_display():
-    print(('| ' + line[0]) + ' ' * (15 - len(str(line[0]))), end='')
+    print(('| ' + line[0]) + ' ' * (14 - len(str(line[0]))), end='')
     print(('| ' + line[1]) + ' ' * (4 - len(str(line[1]))), end='')
     print('| ', end='')
     for grade in range(len(line[2])):
