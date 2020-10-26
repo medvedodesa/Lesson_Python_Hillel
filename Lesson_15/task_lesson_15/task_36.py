@@ -32,8 +32,8 @@ class Group:
             return self.name, self.age, self.grades
 
 
-groutStudent = open('groutStudent.txt', encoding='utf-8')
-information_student = groutStudent.readlines()
+groupStudent = open('groupStudent.txt', encoding='utf-8')
+information_student = groupStudent.readlines()
 listGrout = Group()
 
 # БЕРУ ДАННЫЕ ИЗ ФАЙЛА groutStudent.txt И ДОБАВЛЯЮ ВСЕ ДАННЫЕ О СТУДЕНТЕ В self.studentList
@@ -41,7 +41,7 @@ for i in information_student:
     file = i.strip('\n').split()
     listGrout.add_student(file[0], file[1], file[2:])
 
-groutStudent.close()
+groupStudent.close()
 
 print('| {name:^15}|{age:^5}|{grades:^37}|'.format(name='NAME', age='AGE', grades='GRADE'))
 print(' ' + '-' * 60 + ' ')
