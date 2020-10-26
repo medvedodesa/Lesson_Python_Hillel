@@ -96,6 +96,6 @@ matrix = [[randint(1, 51) for j in range(lening)] for i in range(lening)]
 # МОЖНО УКАЗАТЬ ВМЕСТО -len(matrix)- ПЕРЕМЕННУЮ -lening-
 len_list = len(matrix)
 suma_list = [0] * len_list
-
+а
 sort_list(matrix, len_list, suma_list)
 output_on_display(matrix, len_list, suma_list)
