@@ -39,7 +39,10 @@ listGrout = Group()
 # БЕРУ ДАННЫЕ ИЗ ФАЙЛА groutStudent.txt И ДОБАВЛЯЮ ВСЕ ДАННЫЕ О СТУДЕНТЕ В self.studentList
 for i in information_student:
     file = i.strip('\n').split()
-    listGrout.add_student(file[0], file[1], file[2:])
+    listGrout.add_student(file[0],   # ИМЯ,
+                          file[1],   # ВОЗРАСТ
+                          file[2:]   # ОЦЕНКИ(В виде списка)
+                          )     # ЕСЛИ МЫ ВЫВЕДЕМ ЭТО НА ЭКРАН ТО УВИДИМ СПИСОК СТУДЕНТОВ С ЕГО ХАРАКТЕРИСТИКАМИ
 
 groupStudent.close()
 
