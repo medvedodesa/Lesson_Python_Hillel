@@ -1,7 +1,7 @@
 import requests
 
-from lesson_16.bank import Bank
-from lesson_16.currency import currency
+from Lesson_16.bank import Bank
+from Lesson_16.currency import currency
 
 
 class PrivateBank(Bank):

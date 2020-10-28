@@ -1,7 +1,7 @@
-from lesson_16.aval_bank import RaiffeisenBankAval
-from lesson_16.private_bank import PrivateBank
-from lesson_16.ukrsib_bank import UkrSibBank
-from lesson_16.obmenka_bank import ObmenkaPoint
+from Lesson_16.aval_bank import RaiffeisenBankAval
+from Lesson_16.private_bank import PrivateBank
+from Lesson_16.ukrsib_bank import UkrSibBank
+from Lesson_16.obmenka_bank import ObmenkaPoint
 
 
 banks = [
