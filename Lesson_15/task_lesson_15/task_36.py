@@ -22,7 +22,7 @@ class Student:
         for i in range(len(self.grades)):
             self.grades[i] = str(self.grades[i])
 
-        print('|{name:<15}|{age:^5}|{grades:^50}|'.format(name=self.name, age=str(self.age), grades='  '.join(self.grades)))
+        print('|{name:<15}|{age:^5}|{grades:^35}|'.format(name=self.name, age=str(self.age), grades='  '.join(self.grades)))
 
 
 class Group:
@@ -34,19 +34,33 @@ class Group:
         self.student_list.append(Student(student.name, student.age, student.grades))
 
     def show_student_list(self):
-        print('|{name:^15}|{age:^5}|{grades:^50}|'.format(name='NAME', age='AGE', grades='GRADES'))
-        print(' ' + '-' * 72 + ' ')
+        print('|{name:^15}|{age:^5}|{grades:^35}|'.format(name='NAME', age='AGE', grades='GRADES'))
+        print(' ' + '-' * 57 + ' ')
         for student in self.student_list:
             student.info()
 
 
-first_group = Group('Первая Грумма:')
+first_group = Group('Первая Группа:')
 
-student1 = Student('Андрей', 21, [6, 6, 1, 4, 9, 9, 10, 4, 8, 2, 3, 8])
+student1 = Student('Андрей', 21, [6, 6, 1, 4, 9, 6, 9, 4, 8, 2, 3, 8])
 first_group.add_student(student1)
 student2 = Student('Василий', 18, [2, 9, 4, 7, 6, 6, 3, 6, 5, 5, 2, 4])
 first_group.add_student(student2)
-student3 = Student('Гавриил', 24, [10, 10, 4, 10, 7, 9, 4, 6, 8, 1, 1, 1])
+student3 = Student('Гавриил', 24, [3, 1, 4, 7, 7, 9, 4, 6, 8, 1, 1, 1])
 first_group.add_student(student3)
 
+second_group = Group('Вторая группа:')
+
+student1 = Student('Иван', 22, [5, 3, 9, 8, 4, 6, 8, 2, 4, 3, 3, 1])
+second_group.add_student(student1)
+student2 = Student('Фёдор', 19, [5, 2, 8, 7, 6, 5, 3, 4, 4, 9, 7, 3])
+second_group.add_student(student2)
+student3 = Student('Герман', 20, [9, 8, 4, 6, 7, 5, 4, 6, 7, 1, 3, 2])
+second_group.add_student(student3)
+
+# ПЕРВАЯ ГРУППА
 first_group.show_student_list()
+print()
+
+# ВТОРАЯ ГРУППА
+second_group.show_student_list()
